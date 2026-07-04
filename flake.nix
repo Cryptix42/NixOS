@@ -33,7 +33,7 @@
   outputs = inputs@{ self, nixpkgs, ... }:
   {
     nixosConfigurations = {
-      nephilim = nixpkgs.lib.nixosSystem {
+      Seraphim = nixpkgs.lib.nixosSystem { #---------------------------------------------------------
         system = "x86_64-linux";
         modules = [ 
           ./configuration.nix 

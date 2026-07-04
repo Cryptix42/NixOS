@@ -1,0 +1,14 @@
+{ config, pkgs, inputs, ... }:
+{
+  networking.hostName = "Seraphim";
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement = { enable = false; finegrained = false; };
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  system.stateVersion = "26.05";
+}

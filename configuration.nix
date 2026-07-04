@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./seraphim.nix
     ];
 
   # Hardware Settings
@@ -17,6 +18,8 @@
     };
     bluetooth = { enable = true; };
   };
+  
+  
 
   # Nix Settings
   nix = {
@@ -46,6 +49,7 @@
     shellAliases = { 
       path = "echo $PATH | tr ':' '\n' | nl"; 
       fonts = "fc-list | sort -u";
+      config = "sudo nano /etc/nixos/configuration.nix";
     };
     extraInit = '' export PATH="$HOME/.guix-profile/bin:$HOME/.config/guix/current/bin:$PATH"; '';
     systemPackages = with pkgs; [
@@ -130,7 +134,6 @@
   # Networking Settings, proxy optional
   networking = {
     firewall = { enable = true; };
-    hostName = "nephilim";
     wireless = { enable = true; };
     networkmanager = { enable = true; };
 #   proxy = { default = "http://user:password@proxy:port/"; noProxy = "127.0.0.1,localhost,internal.domain"; };
@@ -140,11 +143,6 @@
   boot = { 
     loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; };
     kernelPackages = pkgs.linuxPackages_latest;
-  };
-
-  # System Settings
-  system = {
-    stateVersion = "25.11"; # Do Not Change, EVER.
   };
 
   # Time Zone

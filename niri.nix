@@ -91,7 +91,7 @@
     //spawn-at-startup "waybar"
     
     // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-    spawn-sh-at-startup "noctalia"
+    spawn-at-startup "noctalia"
     
     hotkey-overlay {
       // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
