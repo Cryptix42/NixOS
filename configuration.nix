@@ -92,7 +92,8 @@
       ncspot
       fzf
       reaper
-      
+      xdg-utils      
+      adw-gtk3
     ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
   };
 
@@ -123,6 +124,8 @@
       storeDir = "/gnu/store";
       stateDir = "/var";
     };
+    gvfs = { enable = true; };
+    tumbler = { enable = true; };
   };
   
   # Security Settings
@@ -188,6 +191,15 @@
         keyboard = { layout = "us"; };
       };
     };
+    xfconf = { enable = true; };
+    dconf = { enable = true; };
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        pkgs.thunar-archive-plugin
+        pkgs.thunar-volman
+      ];
+    };
   };
   
   # Nixpkgs Configuration
@@ -201,8 +213,11 @@
   # XDG Portal Settings
   xdg.portal = {
     enable = true; 
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "gtk";
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome 
+    ];
+    config.common.default = "*";
     
   };
 
