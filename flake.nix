@@ -37,6 +37,7 @@
         system = "x86_64-linux";
         modules = [ 
           ./configuration.nix 
+          ./hosts/seraphim.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.noctalia-greeter.nixosModules.default
         ];

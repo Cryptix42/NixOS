@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./seraphim.nix
     ];
 
   # Hardware Settings
