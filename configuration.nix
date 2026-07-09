@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [ ];
@@ -46,6 +46,7 @@
       path = "echo $PATH | tr ':' '\n' | nl"; 
       fonts = "fc-list | sort -u";
       config = "sudo nano /etc/nixos/configuration.nix";
+      ".." = "cd ..";
     };
     extraInit = '' export PATH="$HOME/.guix-profile/bin:$HOME/.config/guix/current/bin:$PATH"; '';
     systemPackages = with pkgs; [

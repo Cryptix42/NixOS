@@ -41,6 +41,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.noctalia-greeter.nixosModules.default
         ];
+      specialArgs = { inherit self; inherit inputs; };
       };
       Seraphim = nixpkgs.lib.nixosSystem { #---------------------------------------------------------
         system = "x86_64-linux";
