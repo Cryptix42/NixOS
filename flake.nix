@@ -33,11 +33,20 @@
   outputs = inputs@{ self, nixpkgs, ... }:
   {
     nixosConfigurations = {
+      Nephilim = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./hosts/nephilim/default.nix
+          inputs.home-manager.nixosModules.home-manager
+          inputs.noctalia-greeter.nixosModules.default
+        ];
+      };
       Seraphim = nixpkgs.lib.nixosSystem { #---------------------------------------------------------
         system = "x86_64-linux";
         modules = [ 
           ./configuration.nix 
-          ./hosts/seraphim.nix
+          ./hosts/seraphim/default.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.noctalia-greeter.nixosModules.default
         ];

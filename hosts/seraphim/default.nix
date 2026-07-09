@@ -1,5 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
+  imports = [ ./hardware-configuration.nix ];
+
   networking.hostName = "Seraphim";
 
   hardware.nvidia = {

@@ -1,10 +1,7 @@
 { config, pkgs, inputs,  ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [ ];
 
   # Hardware Settings
   hardware = {
