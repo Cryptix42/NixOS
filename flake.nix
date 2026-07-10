@@ -7,15 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    qml-niri = {
-      url = "github:imiric/qml-niri/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,28 +22,16 @@
   };
   
   outputs = inputs@{ self, nixpkgs, ... }:
-  {
-    nixosConfigurations = {
-      Nephilim = nixpkgs.lib.nixosSystem {
+    let
+      mkHost = hostPath: nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          ./hosts/nephilim/default.nix
-          inputs.home-manager.nixosModules.home-manager
-          inputs.noctalia-greeter.nixosModules.default
-        ];
-      specialArgs = { inherit self; inherit inputs; };
-      };
-      Seraphim = nixpkgs.lib.nixosSystem { #---------------------------------------------------------
-        system = "x86_64-linux";
-        modules = [ 
-          ./configuration.nix 
-          ./hosts/seraphim/default.nix
-          inputs.home-manager.nixosModules.home-manager
-          inputs.noctalia-greeter.nixosModules.default
-        ];
+        modules = [ hostPath ];
         specialArgs = { inherit self; inherit inputs; };
       };
+    in {
+      nixosConfigurations = {
+        Seraphim = mkHost ./hosts/seraphim/default.nix; 
+        Nephilim = mkHost ./hosts/nephilim/default.nix;
+      };
     };
-  };
 }
