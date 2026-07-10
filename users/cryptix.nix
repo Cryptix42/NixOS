@@ -16,7 +16,6 @@
       chez
       gcc
       clang
-      freecad
       reaper
       miktex
       texstudio
