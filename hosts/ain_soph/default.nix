@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ../../desktops/kde-plasma.nix
     ../../core/default.nix
-    ../../home/home-manager.nix
     ../../users/kutaren.nix
   ];
   networking.hostName = "Ain_Soph";
