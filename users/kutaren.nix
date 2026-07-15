@@ -1,30 +1,18 @@
-{ config, pkgs, inputs, ... }:
-
+{ config, inputs, pkgs, ... }:
 {
-  users.users.cryptix = {
+  users.users.kutaren = {
     isNormalUser = true;
-    description = "Jonathan";
+    description = "Cameron";
     extraGroups = [ "guixBuild" "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [ 
       python315
-      llvm
-      odin
       emacs
-      nim
-      sbcl
-      chez
-      gcc
-      clang
       reaper
-      miktex
-      texstudio
       vscodium
       foliate
       prismlauncher
       obsidian
-      krita
-      kdePackages.ark
     ];
   };
 }

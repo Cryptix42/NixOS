@@ -8,14 +8,13 @@
     shellAliases = { 
       path = "echo $PATH | tr ':' '\n' | nl"; 
       fonts = "fc-list | sort -u";
-      config = "sudo nano /etc/nixos/configuration.nix";
+      flakeup = "nix flake update";
       ".." = "cd ..";
     };
     extraInit = '' export PATH="$HOME/.guix-profile/bin:$HOME/.config/guix/current/bin:$PATH"; '';
     systemPackages = with pkgs; [
       wget
       git
-      fuzzel
       ghostty
       nh
       btop
@@ -35,12 +34,15 @@
       wl-clipboard
       inputs.zen-browser.packages.x86_64-linux.default
       inputs.noctalia.packages.x86_64-linux.default
+      fuzzel
       feh
       mpv
       ncspot
       fzf
       xdg-utils      
       adw-gtk3
+      localsend
+      helium
     ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
   };
 

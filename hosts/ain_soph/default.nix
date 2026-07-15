@@ -1,14 +1,14 @@
-{ config, pkgs, inputs, ... }:
-{
-  imports = [ 
-    ./hardware-configuration.nix  
-    ../../desktops/niri.nix
-    ../../core/default.nix
-    ../../users/cryptix.nix
-    ../../home/home-manager.nix
-  ];
+{config, pkgs, inputs, ... }:
 
-  networking.hostName = "Seraphim";
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../desktops/kde-plasma.nix
+    ../../core/default.nix
+    ../../home/home-manager.nix
+    ../../users/kutaren.nix
+  ];
+  networking.hostName = "Ain_Soph";
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -18,5 +18,4 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
-  system.stateVersion = "26.05";
 }
