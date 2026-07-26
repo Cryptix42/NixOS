@@ -20,11 +20,11 @@
       transform "normal"
       position x=0 y=0  
     }
-    output "DP-1" { 
-      mode "2560x1440@144"
+    output "ASUSTek COMPUTER INC VG27B N8LMQS026748" { 
+      mode "2560x1440"
       scale 1
       transform "normal" 
-      position x=1080 y=0
+      position x=1920 y=0
     }
     layout {
       gaps 4
