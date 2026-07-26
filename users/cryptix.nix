@@ -24,7 +24,11 @@
       prismlauncher
       obsidian
       krita
+<<<<<<< HEAD
       guile
+=======
+      kdePackages.ark
+>>>>>>> e82f20ab9d96a9fdfdb98cef2b10f44d403af1b3
     ];
   };
 }

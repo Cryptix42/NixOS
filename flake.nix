@@ -32,6 +32,7 @@
       nixosConfigurations = {
         Seraphim = mkHost ./hosts/seraphim/default.nix; 
         Nephilim = mkHost ./hosts/nephilim/default.nix;
+        Ain_Soph = mkHost ./hosts/ain_soph/default.nix;
       };
     };
 }

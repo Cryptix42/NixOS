@@ -39,7 +39,10 @@
   };
 
   networking = {
-    firewall = { enable = true; };
+    firewall = { 
+      enable = true; 
+      allowedTCPPorts = [ 53317 ];
+    };
     wireless = { enable = true; };
     networkmanager = { enable = true; };
   };
