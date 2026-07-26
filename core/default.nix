@@ -60,6 +60,13 @@
     ];
     config.common.default = "*";
   };
+  
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = [ "thunar.desktop" ];
+    };
+  };  
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
