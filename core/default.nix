@@ -5,6 +5,7 @@
     ./environment.nix
     ./programs.nix
     ./gaming.nix
+    ./security.nix
   ];
 
   nixpkgs.config = { 
@@ -46,11 +47,6 @@
   boot = { 
     loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; };
     kernelPackages = pkgs.linuxPackages_latest;
-  };
-
-  security = {
-    polkit = { enable = true; };
-    rtkit = { enable = true; };
   };
 
   xdg.portal = {

@@ -24,6 +24,7 @@
       prismlauncher
       obsidian
       krita
+      guile
     ];
   };
 }

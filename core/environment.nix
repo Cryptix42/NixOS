@@ -41,6 +41,9 @@
       fzf
       xdg-utils      
       adw-gtk3
+      nyxt
+      fileshare
+      kdePackages.filelight
     ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
   };
 
