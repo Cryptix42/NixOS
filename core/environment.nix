@@ -41,13 +41,10 @@
       fzf
       xdg-utils      
       adw-gtk3
-<<<<<<< HEAD
       nyxt
       fileshare
       kdePackages.filelight
-=======
       localsend
->>>>>>> e82f20ab9d96a9fdfdb98cef2b10f44d403af1b3
     ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
   };
 
