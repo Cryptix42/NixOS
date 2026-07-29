@@ -94,7 +94,6 @@
     spawn-at-startup "noctalia"
     
     hotkey-overlay {
-      // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
       skip-at-startup
     }
     prefer-no-csd
@@ -140,10 +139,6 @@
       Mod+Ctrl+J     { move-window-down; }
       Mod+Ctrl+K     { move-window-up; }
       Mod+Ctrl+L     { move-column-right; }
-      // Mod+J     { focus-window-or-workspace-down; }
-      // Mod+K     { focus-window-or-workspace-up; }
-      // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-      // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
       Mod+Home { focus-column-first; }
       Mod+End  { focus-column-last; }
       Mod+Ctrl+Home { move-column-to-first; }
@@ -164,11 +159,6 @@
       Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
       Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
       Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-      // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-      // ...
-      // And you can also move a whole workspace to another monitor:
-      // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-      // ...
       Mod+Page_Down      { focus-workspace-down; }
       Mod+Page_Up        { focus-workspace-up; }
       Mod+U              { focus-workspace-down; }
@@ -177,18 +167,10 @@
       Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
       Mod+Ctrl+U         { move-column-to-workspace-down; }
       Mod+Ctrl+I         { move-column-to-workspace-up; }
-      // Alternatively, there are commands to move just a single window:
-      // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-      // ...
       Mod+Shift+Page_Down { move-workspace-down; }
       Mod+Shift+Page_Up   { move-workspace-up; }
       Mod+Shift+U         { move-workspace-down; }
       Mod+Shift+I         { move-workspace-up; }
-      // You can bind mouse wheel scroll ticks using the following syntax.
-      // These binds will change direction based on the natural-scroll setting.
-      // To avoid scrolling through workspaces really fast, you can use
-      // the cooldown-ms property. The bind will be rate-limited to this value.
-      // You can set a cooldown on any bind, but it's most useful for the wheel.
       Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
       Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
       Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
@@ -197,8 +179,6 @@
       Mod+WheelScrollLeft       { focus-column-left; }
       Mod+Ctrl+WheelScrollRight { move-column-right; }
       Mod+Ctrl+WheelScrollLeft  { move-column-left; }
-      // Usually scrolling up and down with Shift in applications results in
-      // horizontal scrolling; these binds replicate that.
       Mod+Shift+WheelScrollDown      { focus-column-right; }
       Mod+Shift+WheelScrollUp        { focus-column-left; }
       Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
