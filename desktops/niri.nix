@@ -2,7 +2,7 @@
 {
   imports = [ 
     inputs.noctalia-greeter.nixosModules.default 
-    inputs.noctalia.nixosModules.default
+    inputs.noctalia.nixosModules.default	
   ];
 
   environment.systemPackages = with pkgs; [ 
