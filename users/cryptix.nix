@@ -33,6 +33,8 @@
     ];
   };
 
+  services.guix.enable = true;
+
   home-manager.users.cryptix = { config, ... }: {
     imports = [
       ../modules/niri.nix
