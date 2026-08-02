@@ -33,7 +33,6 @@
       file
       wl-clipboard
       inputs.zen-browser.packages.x86_64-linux.default
-      inputs.noctalia.packages.x86_64-linux.default
       fuzzel
       feh
       mpv
@@ -41,7 +40,6 @@
       fzf
       xdg-utils      
       adw-gtk3
-      nyxt
       fileshare
       gdu
       ncdu

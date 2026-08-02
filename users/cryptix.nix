@@ -27,6 +27,10 @@
       krita
       guile
       kdePackages.ark
+      kdePackages.kate
+      kdePackages.kdenlive
+      obs-studio
+      inputs.noctalia.packages.x86_64-linux.default
     ];
   };
 

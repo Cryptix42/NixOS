@@ -6,8 +6,13 @@
     ../../core/default.nix
     ../../users/cryptix.nix
     ../../home/home-manager.nix
+    ../../modules/host-display.nix
   ];
 
   networking.hostName = "Nephilim";
   system.stateVersion = "25.11";
+
+  myHost.monitors = {
+    "eDP-1" = { mode = "1920x1080@60"; x = 0; y = 0; };
+  };
 }
