@@ -56,4 +56,21 @@
     };
     home.stateVersion = "25.11";
   };
+
+  imports = [ ../modules/guilefetch.nix ];
+
+  programs.guilefetch = {
+    enable = true;
+    logoFile = ../assets/seraphim-logo.txt;
+    logoAlign = "center";
+    storageMounts = [ "/" ];
+    order = [
+      "title" "rule" "os" "kernel" "packages" "cpu" "gpu" "ram" "storage"
+      "shell" "editor" "terminal" "wm" "gui-shell" "uptime"
+    ];
+    extraEntries.uptime = {
+      label = "Uptime";
+      command = "uptime -p | sed 's/^up //'";
+    };
+  };
 }

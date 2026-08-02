@@ -44,6 +44,7 @@
       gdu
       ncdu
       localsend
+      pciutils
     ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
   };
 
