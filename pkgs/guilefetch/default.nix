@@ -36,11 +36,12 @@ stdenvNoCC.mkDerivation {
     runHook postBuild
   '';
 
-  installPhase = ''
+installPhase = ''
     runHook preInstall
 
     install -Dm644 guilefetch.scm $out/${siteDir}/guilefetch.scm
     install -Dm644 guilefetch.go  $out/${ccacheDir}/guilefetch.go
+    install -Dm644 main.scm       $out/share/guilefetch/main.scm
 
     makeWrapper ${guile}/bin/guile $out/bin/guilefetch \
       --prefix GUILE_LOAD_PATH : $out/${siteDir} \
@@ -49,8 +50,8 @@ stdenvNoCC.mkDerivation {
       --set GUILE_AUTO_COMPILE 0 \
       ${lib.optionalString (defaultConfig != null)
         "--set-default GUILEFETCH_CONFIG ${defaultConfig}"} \
-      --add-flags "-c" \
-      --add-flags '(begin (use-modules (guilefetch)) (main (command-line)))'
+      --add-flags "-s" \
+      --add-flags "$out/share/guilefetch/main.scm"
 
     runHook postInstall
   '';
