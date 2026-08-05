@@ -17,4 +17,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
+
+
+  boot = { 
+    loader = { grub = { enable = true; efiSupport = true; device = "nodev"; } efi.canTouchEfiVariables = true; };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+
 }

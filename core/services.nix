@@ -21,7 +21,6 @@
     };
     libinput = { enable = true; };
     guix = {
-      enable = false;
       package = pkgs.guix;
       gc.enable = true;
       storeDir = "/gnu/store";

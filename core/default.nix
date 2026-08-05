@@ -47,11 +47,6 @@
     networkmanager = { enable = true; };
   };
   
-  boot = { 
-    loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; };
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
-
   xdg.portal = {
     enable = true; 
     extraPortals = [ 

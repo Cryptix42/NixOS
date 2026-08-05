@@ -25,4 +25,11 @@
     "HDMI-A-1" = { mode = "1920x1080@60"; x = 0; y = 0; };
     "ASUSTek COMPUTER INC VG27B N8LMQS026748" = { mode = "2560x1440"; x = 1920; y = 0; };
   };
+
+  boot = { 
+    loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+
 }

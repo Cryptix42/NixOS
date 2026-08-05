@@ -15,4 +15,7 @@
       obsidian
     ];
   };
+
+  services.guix.enable = false;
+
 }

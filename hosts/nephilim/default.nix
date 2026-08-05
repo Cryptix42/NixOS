@@ -15,4 +15,11 @@
   myHost.monitors = {
     "eDP-1" = { mode = "1920x1080@60"; x = 0; y = 0; };
   };
+
+  boot = { 
+    loader = { systemd-boot.enable = true; efi.canTouchEfiVariables = true; };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+
 }
