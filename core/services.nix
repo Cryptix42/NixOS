@@ -8,7 +8,6 @@
       enable = true; 
       xkb = { layout = "us"; variant = ""; }; 
     };
-#   displayManager.sddm = { enable = true; wayland.enable = true; };
     tuned = { enable = true; };
     upower = { enable = true; };  
     flatpak = { enable = true; };

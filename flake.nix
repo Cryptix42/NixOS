@@ -19,6 +19,8 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
   };
   
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -32,7 +34,7 @@
       nixosConfigurations = {
         Seraphim = mkHost ./hosts/seraphim/default.nix; 
         Nephilim = mkHost ./hosts/nephilim/default.nix;
-        Ain_Soph = mkHost ./hosts/ain_soph/default.nix;
+        AinSoph = mkHost ./hosts/ain_soph/default.nix;
       };
     };
 }
