@@ -34,7 +34,9 @@
     openFirewall = true;
     servers.family = {
       enable = true;
-      package = pkgs.fabricServers.fabric-26_2;   
+      package = pkgs.fabricServers.fabric-26_2.override {
+        jre_headless = pkgs.temurin-jre-bin-25;
+      };   
       jvmOpts = "-Xmx4G -Xms4G";
       serverProperties = {
         white-list = false;
