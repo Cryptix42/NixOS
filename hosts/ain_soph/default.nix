@@ -44,7 +44,10 @@
       };
       whitelist = { };  
       symlinks."mods/fabric-api.jar" =
-      pkgs.fetchurl { url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/Kr4WG5mG/fabric-api-0.154.2+26.2.jar"; sha512 = lib.fakeSha512; };
+      pkgs.fetchurl { 
+        url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/Kr4WG5mG/fabric-api-0.154.2+26.2.jar"; 
+        sha512 = "sha512-fO2thi6BBafejbCQwHB8JaFKlHJlQJCGHc9JD4NIYsMhJyPnYvb3l6DkaDEE9LOiDTaS+ynXtcCvQ3YTKD002w=="; 
+      };
     };
   };
 
