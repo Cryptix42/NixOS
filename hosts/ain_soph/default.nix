@@ -21,7 +21,7 @@
 
 
   boot = { 
-    loader = { grub = { enable = true; efiSupport = true; device = "nodev"; } efi.canTouchEfiVariables = true; };
+    loader = { grub = { enable = true; efiSupport = true; device = "nodev"; }; efi.canTouchEfiVariables = true; };
     kernelPackages = pkgs.linuxPackages_latest;
   };
   services.minecraft-servers = {
