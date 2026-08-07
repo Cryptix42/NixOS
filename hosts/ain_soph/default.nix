@@ -10,6 +10,8 @@
   ];
   networking.hostName = "AinSoph";
 
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlays.default ];
+
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement = { enable = true; finegrained = false; };
@@ -24,6 +26,7 @@
     loader = { grub = { enable = true; efiSupport = true; device = "nodev"; }; efi.canTouchEfiVariables = true; };
     kernelPackages = pkgs.linuxPackages_latest;
   };
+  
   services.minecraft-servers = {
     enable = true;
     eula = true;
