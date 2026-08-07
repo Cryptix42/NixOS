@@ -7,6 +7,7 @@
     ../../core/default.nix
     ../../users/kutaren.nix
     inputs.nix-minecraft.nixosModules.minecraft-servers
+    inputs.sops-nix.nixosModules.sops
   ];
   networking.hostName = "AinSoph";
 
@@ -25,6 +26,12 @@
   boot = { 
     loader = { grub = { enable = true; efiSupport = true; device = "nodev"; }; efi.canTouchEfiVariables = true; };
     kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    tailscale-authkey = { };
   };
   
   services.minecraft-servers = {

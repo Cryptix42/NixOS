@@ -7,6 +7,7 @@
     ../../users/cryptix.nix
     ../../home/home-manager.nix
     ../../modules/host-display.nix
+    inputs.sops-nix.nixosModules.sops
   ];
 
   networking.hostName = "Seraphim";
@@ -31,5 +32,9 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ]; 
+    secrets.tailscale-authkey = { };
+  };
 }

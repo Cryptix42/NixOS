@@ -13,6 +13,10 @@
     flatpak = { enable = true; };
     printing = { enable = true; };
     pulseaudio = { enable = false; };
+    tailscale = {
+      enable = true;
+      authKeyFile = config.sops.secrets.tailscale-authkey.path;
+    };
     pipewire = { 
       enable = true; 
       alsa = { enable = true; support32Bit = true; }; 

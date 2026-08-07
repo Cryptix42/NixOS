@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-
+    sops-nix.url = "github:Mic92/sops-nix";
   };
   
   outputs = inputs@{ self, nixpkgs, ... }:
