@@ -15,6 +15,7 @@
     systemPackages = with pkgs; [
       wget
       git
+      tmux
       ghostty
       nh
       btop
