@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... }:
+{config, pkgs, inputs, lib, ... }:
 
 {
   services = {
@@ -14,8 +14,7 @@
     printing = { enable = true; };
     pulseaudio = { enable = false; };
     tailscale = {
-      enable = true;
-      authKeyFile = config.sops.secrets.tailscale-authkey.path;
+      authKeyFile = lib.mkDefault config.sops.secrets.tailscale-authkey.path;
     };
     pipewire = { 
       enable = true; 

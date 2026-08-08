@@ -33,6 +33,8 @@
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     secrets.tailscale-authkey = { };
   };
+
+  services.tailscale.enable = true;
   
   services.minecraft-servers = {
     enable = true;

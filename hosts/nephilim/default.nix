@@ -1,4 +1,5 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
+
 {
   imports = [ 
     ./hardware-configuration.nix 
@@ -12,6 +13,8 @@
 
   networking.hostName = "Nephilim";
   system.stateVersion = "25.11";
+
+  services.tailscale.enable = false;
 
   myHost.monitors = {
     "eDP-1" = { mode = "1920x1080@60"; x = 0; y = 0; };
