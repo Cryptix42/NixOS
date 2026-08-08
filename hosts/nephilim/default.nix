@@ -14,7 +14,7 @@
   networking.hostName = "Nephilim";
   system.stateVersion = "25.11";
 
-  services.tailscale.enable = false;
+  services.tailscale.enable = true;
 
   myHost.monitors = {
     "eDP-1" = { mode = "1920x1080@60"; x = 0; y = 0; };

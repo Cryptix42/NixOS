@@ -34,9 +34,9 @@
 
   services.tailscale.enable = true;
 
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ]; 
-    secrets.tailscale-authkey = { };
-  };
+#  sops = {
+#    defaultSopsFile = ../../secrets/secrets.yaml;
+#    age.sshKeyPaths = [ "/home/cryptix/.config/sops/age/keys.txt" ]; 
+#    secrets.tailscale-authkey = { };
+#  };
 }
