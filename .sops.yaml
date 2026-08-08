@@ -1,9 +1,11 @@
 keys:
-  - &seraphim age1scdkfhmmrnzy3vemdqw2wv4dz4ympm5mrfcl6weyt5af2u44rfvsxf0asj
-  - &ainsoph age1u38ynlvyhl3d543rmfhnpm7fe0jp70r4rl2lc8xqtanen2a725msel2w5n
+  - &seraphim age1dj5gjnyd34m6w080zlx2l9676fgdqf3mphtv7g54mpqekl9z8dzqcl27sz
+  - &ainsoph age1h7r7lxvvw44lt83za7e27573dk49he5h8dqrvp75a244p28kqq8q9g03ry
+  - &nephilim age1609y7m3rcajn8aguyu8kurfa4mnsvvy0668w8mz0wulzn9c46qesqt0heu
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:
       - age:
           - *seraphim
           - *ainsoph
+          - *nephilim
