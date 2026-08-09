@@ -10,6 +10,7 @@
       fonts = "fc-list | sort -u";
       flakeup = "nix flake update";
       ".." = "cd ..";
+      publicip = "curl https://ipinfo.io/ip":
     };
     extraInit = '' export PATH="$HOME/.guix-profile/bin:$HOME/.config/guix/current/bin:$PATH"; '';
     systemPackages = with pkgs; [

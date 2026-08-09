@@ -34,6 +34,10 @@
 #    secrets.tailscale-authkey = { };
 #  };
 
+  environment.shellAliases = {
+    tmux-server-1 = "sudo tmux -S /run/minecraft/family.sock attach";
+  };
+
   services.tailscale.enable = true;
   
   services.minecraft-servers = {
