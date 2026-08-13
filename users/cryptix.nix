@@ -30,6 +30,7 @@
       kdePackages.kate
       kdePackages.kdenlive
       obs-studio
+      zathura
     ];
   };
 
