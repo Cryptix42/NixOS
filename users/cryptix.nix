@@ -45,6 +45,7 @@
       kdePackages.ark # KDE archive opener
       kdePackages.kate # KDE notepad and code editor wuth LSP integration
       kdePackages.kdenlive # KDE video editor
+      kdePackages.konsole # KDE terminal emulater, needed for Kate
 
       ## GUI Tools ##
       obs-studio # Video recording and streaming
