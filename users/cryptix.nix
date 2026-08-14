@@ -10,19 +10,31 @@
     packages = with pkgs; [ 
 
       ## Interpreted programming languages ##
-      python315
+      python314
 
       ## Compiled programming languages  ##
-      gcc # C/C++ language
+      gcc # GNU C/C++ language
+      clang # LLVM C/C++ language
       odin # Odin language
       nim # Nim language
-      nimble # package manager for Nim
 
       ## God's chosen programming languages (Multi-paradigm Lisp family) ##
       sbcl # Steel Bank Common Lisp type2
       guile # Scheme R5RS Lisp type1
       chez # Scheme R6RS Lisp type1
       chicken # Scheme R7RS Lisp type1
+
+      ## LSPs (Language Server Protocols) and language tooling ##
+      nil # nix LSP
+      nimlangserver # Nim LSP
+      python314Packages.python-lsp-server # Python LSP
+      clang-tools # extra clang tooling + C/C++ LSP
+      guile-lsp-server # Guile LSP
+      chickenPackages_5.chickenEggs.lsp-server # Chicken LSP
+      akkuPackages.scheme-langserver # Chez LSP
+      llvm # Multilanguage toolchain, compiles LLVM-IR
+      nimble # package manager for Nim
+      akku # package manager for R6RS (Chez, or Guile in R6RS mode)
 
       ## Math stuff for school ##
       miktex # LaTeX toolchain
@@ -31,7 +43,7 @@
       ## Various KDE apps I have yet to replace ##
       krita # KDE paint
       kdePackages.ark # KDE archive opener
-      kdePackages.kate # KDE notepad and code editor
+      kdePackages.kate # KDE notepad and code editor wuth LSP integration
       kdePackages.kdenlive # KDE video editor
 
       ## GUI Tools ##
@@ -71,7 +83,7 @@
       eza # text colored alt to ls
       bat # text colored alt to cat
       dsearch # CLI fuzzy find filesystem search  
-      fzf # CLI fuzzy find filesystem search
+      fzf # TUI fuzzy find filesystem search
       
     ];
   };

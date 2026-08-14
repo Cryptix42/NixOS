@@ -19,9 +19,9 @@
           "z"
           "alias-finder"
         ];
-      };
-      
+      };  
     };
+    fzf = { keybindings = true; fuzzyCompletion = true; };
     xfconf = { enable = true; };
     dconf = { enable = true; };
     thunar = {
