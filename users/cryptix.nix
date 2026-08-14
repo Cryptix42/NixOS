@@ -34,15 +34,45 @@
       kdePackages.kate # KDE notepad and code editor
       kdePackages.kdenlive # KDE video editor
 
-      ## My Go-to Apps ##
+      ## GUI Tools ##
       obs-studio # Video recording and streaming
-      zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
       foliate # Ebook and PDF reader
       emacs # Extensable text editor + LISP interpreter 
       freecad # Parametric modelling software
       prismlauncher # Minecraft client
       obsidian # Markdown notes app
+      inputs.zen-browser.packages.x86_64-linux.default # Visually minimal Firefox browser
+      localsend # LAN filesharing
+      ghostty # Terminal emulator
+      feh # Minimal image viewer
+      mpv # Minimal video player
+      zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
 
+      ## Theming controls for Niri WM ##
+      nwg-look
+      gtk3
+      qt6Packages.qt6ct
+      matugen
+      xdg-utils      
+      adw-gtk3
+
+      ## Needed for Niri WM functionality ##
+      fuzzel # App launcher
+      xwayland-satellite # xorg to wayland compatability package that Niri uses
+      wl-clipboard # wayland clipboard
+      
+      ## TUI and CLI Tools ##
+      btop # TUI process monitor
+      gdu # TUI disk analyzer
+      yazi # TUI file explorer
+      superfile # TUI file explorer
+      micro-full # TUI multibuffer text editor
+      fileshare # CLI LAN file sharing
+      eza # text colored alt to ls
+      bat # text colored alt to cat
+      dsearch # CLI fuzzy find filesystem search  
+      fzf # CLI fuzzy find filesystem search
+      
     ];
   };
 

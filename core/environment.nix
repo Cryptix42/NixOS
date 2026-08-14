@@ -17,37 +17,11 @@
       wget
       git
       tmux
-      ghostty
-      nh
-      btop
-      bat
-      eza
-      nix-output-monitor
-      matugen
-      fastfetch
-      dsearch
-      xwayland-satellite
-      yazi
-      gtk3
-      qt6Packages.qt6ct
-      nwg-look
-      micro-full
       file
-      wl-clipboard
-      inputs.zen-browser.packages.x86_64-linux.default
-      fuzzel
-      feh
-      mpv
-      ncspot
-      fzf
-      xdg-utils      
-      adw-gtk3
-      fileshare
-      gdu
+      fastfetch
       ncdu
-      localsend
       pciutils
-    ] ++ (with yaziPlugins; [wl-clipboard drag ouch gvfs sudo chmod gitui piper office compress clipboard mediainfo rich-preview]);
+    ];
   };
 
 }
