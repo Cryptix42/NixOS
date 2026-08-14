@@ -41,7 +41,7 @@
   networking = {
     firewall = { 
       enable = true; 
-      allowedTCPPorts = [ 53317 ];
+      allowedTCPPorts = [ 53317 1234 ];
     };
     wireless = { enable = true; };
     networkmanager = { enable = true; };
