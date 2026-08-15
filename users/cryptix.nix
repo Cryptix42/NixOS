@@ -1,7 +1,9 @@
 { config, pkgs, inputs, stable, beam, ... }:
 
 {
-
+  environment.sessionVariables = {
+    EDITOR = "micro";
+  };
   users.users.cryptix = {
     isNormalUser = true;
     description = "Jonathan";
@@ -66,7 +68,9 @@
       feh # Minimal image viewer
       mpv # Minimal video player
       zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
-
+      discord # Instant messaging
+      # lmstudio # trying out as flatpak first
+       
       ## Theming controls for Niri WM ##
       nwg-look
       gtk3
