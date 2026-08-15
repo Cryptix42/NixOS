@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,12 +24,14 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
   
-  outputs = inputs@{ self, nixpkgs, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, ... }:
     let
+      stable = import nixpkgs-stable { inherit system; };
+      beam = stable.beam.packages.erlang_27;
+      system = "x86_64-linux";
       mkHost = hostPath: nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [ hostPath ];
-        specialArgs = { inherit self; inherit inputs; };
+        specialArgs = { inherit self inputs stable beam; };
       };
     in {
       nixosConfigurations = {

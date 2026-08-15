@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, stable, beam, ... }:
 
 {
 
@@ -10,7 +10,10 @@
     packages = with pkgs; [ 
 
       ## Interpreted programming languages ##
-      python314
+      python314 # Python 3.14
+      stable.erlang # Erlang language for VM Elixer and Gleam both use
+      stable.gleam # Gleam language for Erlang VM
+      beam.elixir_1_19 # Elixer language for Erlang VM
 
       ## Compiled programming languages  ##
       gcc # GNU C/C++ language
@@ -35,6 +38,9 @@
       llvm # Multilanguage toolchain, compiles LLVM-IR
       nimble # package manager for Nim
       akku # package manager for R6RS (Chez, or Guile in R6RS mode)
+      beam.rebar3 # dependancy for Gleam using Erlang packages
+      beam.elixir-ls # Elixer LSP, MAY SOON BE REPLACED BY "expert"
+      stable.inotify-tools # Elixer file watching dependancy
 
       ## Math stuff for school ##
       miktex # LaTeX toolchain
