@@ -95,7 +95,7 @@
       bat # text colored alt to cat
       dsearch # CLI fuzzy find filesystem search  
       fzf # TUI fuzzy find filesystem search
-      
+
     ];
   };
 
