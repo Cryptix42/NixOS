@@ -69,6 +69,7 @@
       mpv # Minimal video player
       zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
       discord # Instant messaging
+      libreoffice # Office suite
       # lmstudio # trying out as flatpak first
        
       ## Theming controls for Niri WM ##

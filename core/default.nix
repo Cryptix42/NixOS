@@ -41,7 +41,7 @@
   networking = {
     firewall = { 
       enable = true; 
-      allowedTCPPorts = [ 53317 1234 ];
+      allowedTCPPorts = [ 53317 ];
     };
     wireless = { enable = true; };
     networkmanager = { enable = true; };
@@ -60,6 +60,7 @@
     enable = true;
     defaultApplications = {
       "inode/directory" = [ "thunar.desktop" ];
+      "pdf" = [ "zathura" ];
     };
   };  
 
