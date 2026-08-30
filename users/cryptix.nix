@@ -96,7 +96,12 @@
       bat # text colored alt to cat
       dsearch # CLI fuzzy find filesystem search  
       fzf # TUI fuzzy find filesystem search
-
+      kew # TUI audio player
+      mmtui # TUI disk mounter
+      wiremix # TUI pipewire mixer
+      fetch # stupidly fancy fastfetch 
+      catnip # TUI audio visualizer
+     
     ];
   };
 
@@ -106,7 +111,44 @@
     imports = [
       ../modules/niri.nix
       ../home/dot-files/ghostty.nix
+      inputs.umbriel.homeModules.default
     ];
+    programs.umbriel = {
+      enable = true;
+      settings = {
+        general.autostart = [ "noctalia" ];
+        layout.gap = 5;
+        input.keyboard.layout = "us";
+        input.cursor.follows_focus = true;
+        keybinds = {
+          "Mod+Return" = "spawn:ghostty";
+          "Mod+Q"      = "window-close";
+          "Mod"        = "spawn:noctalia msg panel-toggle launcher";
+          "Mod+left"   = "window-focus-or-output-left";
+          "Mod+right"  = "window-focus-or-output-right";
+          "Mod+up"     = "window-focus-or-workspace-up";
+          "Mod+down"   = "window-focus-or-workspace-down";
+          "Mod+C"      = "column-center";
+          "Mod+O"      = "overview-toggle";
+
+          "Mod+L"       = "spawn:umbriel msg workspace-set-layout:scrolling";
+          "Mod+Shift+L" = "spawn:umbriel msg workspace-set-layout:dwindle";
+          
+          "Mod+Shift+left"  = "window-move-or-output-left";
+          "Mod+Shift+right" = "window-move-or-output-right";
+          "Mod+Shift+up"    = "window-move-or-workspace-up";
+          "Mod+Shift+down"  = "window-move-or-workspace-down";
+          "Mod+Alt+left"    = "window-consume-or-expel-left";
+          "Mod+Alt+right"   = "window-consume-or-expel-right";
+
+          "Mod+Shift+S"     = "window-move-to-scratchpad";
+          "Mod+S"           = "scratchpad-toggle";
+          "Mod+Control+S"   = "window-restore-from-scratchpad";
+          "Mod+Alt+S"       = "scratchpad-focus-next";
+
+        };
+      };
+    };
     myHome.niri = {
       enable = true;
       prefNoCsd = true;
@@ -126,7 +168,12 @@
     home.stateVersion = "25.11";
   };
 
-  imports = [ ../modules/guilefetch.nix ];
+  imports = [ 
+    ../modules/guilefetch.nix 
+    inputs.umbriel.nixosModules.default
+  ];
+
+  programs.umbriel.enable = true;
 
   programs.guilefetch = {
     enable = true;
