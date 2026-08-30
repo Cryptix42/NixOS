@@ -121,15 +121,23 @@
         input.keyboard.layout = "us";
         input.cursor.follows_focus = true;
         keybinds = {
-          "Mod+Return" = "spawn:ghostty";
-          "Mod+Q"      = "window-close";
-          "Mod"        = "spawn:noctalia msg panel-toggle launcher";
-          "Mod+left"   = "window-focus-or-output-left";
-          "Mod+right"  = "window-focus-or-output-right";
-          "Mod+up"     = "window-focus-or-workspace-up";
-          "Mod+down"   = "window-focus-or-workspace-down";
-          "Mod+C"      = "column-center";
-          "Mod+O"      = "overview-toggle";
+          "Mod+Return"  = "spawn:ghostty";
+          "Mod+Q"       = "window-close";
+          "Mod+V"       = "window-toggle-floating";
+          "Mod"         = "spawn:noctalia msg panel-toggle launcher";
+          "Mod+left"    = "window-focus-or-output-left";
+          "Mod+right"   = "window-focus-or-output-right";
+          "Mod+up"      = "window-focus-or-workspace-up";
+          "Mod+down"    = "window-focus-or-workspace-down";
+          "Mod+C"       = "column-center";
+          "Mod+O"       = "overview-toggle";
+          "Mod+F"       = "window-toggle-maximize";
+          "Mod+Shift+F" = "window-toggle-fullscreen";
+
+          "Mod+R"         = "window-modify-width:0.1";
+          "Mod+Shift+R"   = "window-modify-width:-0.1";
+          "Mod+Alt+R"     = "window-modify-height:0.1";
+          "Mod+Control+R" = "window-modify-height:-0.1";
 
           "Mod+L"       = "spawn:umbriel msg workspace-set-layout:scrolling";
           "Mod+Shift+L" = "spawn:umbriel msg workspace-set-layout:dwindle";
