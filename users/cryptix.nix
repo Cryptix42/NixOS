@@ -35,7 +35,7 @@
       python314Packages.python-lsp-server # Python LSP
       clang-tools # extra clang tooling + C/C++ LSP
       guile-lsp-server # Guile LSP
-      chickenPackages_5.chickenEggs.lsp-server # Chicken LSP
+##      chickenPackages_5.chickenEggs.lsp-server # Chicken LSP
       akkuPackages.scheme-langserver # Chez LSP
       llvm # Multilanguage toolchain, compiles LLVM-IR
       nimble # package manager for Nim

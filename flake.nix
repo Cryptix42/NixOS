@@ -23,9 +23,13 @@
     umbriel.url = "git+https://github.com/noctalia-dev/umbriel";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     sops-nix.url = "github:Mic92/sops-nix";
+
+    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    xwayland-satellite.inputs.nixpkgs.follows = "nixpkgs";
+
   };
   
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, xwayland-satellite, ... }:
     let
       stable = import nixpkgs-stable { inherit system; };
       beam = stable.beam.packages.erlang_27;
