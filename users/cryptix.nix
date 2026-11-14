@@ -12,7 +12,34 @@
     packages = with pkgs; [ 
 
       ## Interpreted programming languages ##
-      python314 # Python 3.14
+      (python3.withPackages (ps: with ps; [
+        # --- Graphics / windowing ---
+        pysdl2              # SDL2 bindings; for SDL3 see note below
+        glfw                # pyGLFW
+        pywayland           # Wayland protocol bindings
+        raylib-python-cffi  # raylib (verify name)
+        pygame-ce           # community pygame fork, SDL-based, easiest 2D
+        pyglet              # pure-Python windowing + OpenGL, no C deps to fight
+        pyopengl            # raw OpenGL calls
+        moderngl            # modern, much nicer OpenGL wrapper
+        pillow              # image loading/saving
+
+        # --- Stats / data (for Applied Stats 2) ---
+        numpy
+        scipy               # scipy.stats lives here
+        pandas
+        statsmodels         # regression, ANOVA, GLMs, time series
+        scikit-learn
+        matplotlib
+        seaborn             # statistical plots on top of matplotlib
+        sympy               # symbolic math (handy for algebra too)
+
+        # --- Workflow ---
+        ipython
+        jupyterlab          # notebooks; PyCharm can also open .ipynb
+        rich                # pretty terminal output/tracebacks
+        requests
+      ]))
       stable.erlang # Erlang language for VM Elixer and Gleam both use
       stable.gleam # Gleam language for Erlang VM
       beam.elixir_1_19 # Elixer language for Erlang VM
@@ -56,6 +83,7 @@
       kdePackages.konsole # KDE terminal emulater, needed for Kate
 
       ## GUI Tools ##
+      pycharm
       obs-studio # Video recording and streaming
       foliate # Ebook and PDF reader
       emacs # Extensable text editor + LISP interpreter 
