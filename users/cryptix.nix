@@ -84,6 +84,8 @@
 
       ## GUI Tools ##
       pycharm
+      clion
+      godot
       obs-studio # Video recording and streaming
       foliate # Ebook and PDF reader
       emacs # Extensable text editor + LISP interpreter 
