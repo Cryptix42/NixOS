@@ -8,21 +8,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia = {  url = "github:noctalia-dev/noctalia";  };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "noctalia";
     };
     umbriel.url = "git+https://github.com/noctalia-dev/umbriel";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-    sops-nix.url = "github:Mic92/sops-nix";
 
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     xwayland-satellite.inputs.nixpkgs.follows = "nixpkgs";

@@ -225,6 +225,7 @@ let
     };
     widget = {
       bar.type = "naijnus/flatpak-bg:bar";
+      clock.format = "{:%I:%M %p}";
       file-search.type = "nightwatch75/file-search:file-search";
       status.type = "mindnbytes/nix-status:status";
       updates.type = "dmopp/nixos-updates:updates";
