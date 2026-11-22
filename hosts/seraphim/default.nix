@@ -7,7 +7,6 @@
     ../../users/cryptix.nix
     ../../home/home-manager.nix
     ../../modules/host-display.nix
-    inputs.sops-nix.nixosModules.sops
   ];
 
   networking.hostName = "Seraphim";
@@ -34,9 +33,4 @@
 
   services.tailscale.enable = true;
 
-#  sops = {
-#    defaultSopsFile = ../../secrets/secrets.yaml;
-#    age.sshKeyPaths = [ "/home/cryptix/.config/sops/age/keys.txt" ]; 
-#    secrets.tailscale-authkey = { };
-#  };
 }
