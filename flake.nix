@@ -15,7 +15,6 @@
     };
     noctalia-greeter = {
       url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "noctalia";
     };
     umbriel.url = "git+https://github.com/noctalia-dev/umbriel";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
