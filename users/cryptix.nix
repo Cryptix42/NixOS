@@ -102,7 +102,7 @@
       obsidian # Markdown notes app
       inputs.zen-browser.packages.x86_64-linux.default # Visually minimal Firefox browser
       localsend # LAN filesharing
-      ghostty # Terminal emulator
+
       feh # Minimal image viewer
       mpv # Minimal video player
       zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
@@ -141,6 +141,13 @@
       wiremix # TUI pipewire mixer
       fetch # stupidly fancy fastfetch 
       catnip # TUI audio visualizer
+
+      ##  Terminal emulators, still trying new ones  ##
+      ghostty
+      foot
+      wezterm
+      alacritty
+      kitty
      
     ];
   };
@@ -164,7 +171,11 @@
         input.keyboard.layout = "us";
         input.cursor.follows_focus = true;
         keybinds = {
-          "Mod+Return"  = "spawn ghostty";
+          "Mod+l"  = "spawn ghostty";
+          "Mod+Tab"       = "spawn wezterm";
+          "Mod+k"       = "spawn foot";
+          "Mod+Shift+k" = "spawn kitty";
+          "Mod+Shift+l" = "spawn alacritty";
           "Mod+Q"       = "window-close";
           "Mod+V"       = "window-toggle-floating";
           "Mod"         = "spawn noctalia msg panel-toggle launcher";
@@ -199,7 +210,7 @@
           "Mod+Control+S"   = "window-restore-from-scratchpad";
           "Mod+Alt+S"       = "scratchpad-focus-next";
 
-          "Mod+Tab"         = "cheatsheet-toggle";
+          "Mod+Return"         = "cheatsheet-toggle";
 
         };
       };
@@ -210,7 +221,7 @@
     myHome.niri = {
       enable = true;
       prefNoCsd = true;
-      terminal = "ghostty";
+      terminal = "wezterm";
       spawnAtStartup = [ "noctalia" ];
       gaps = 4;
       windowRules = [

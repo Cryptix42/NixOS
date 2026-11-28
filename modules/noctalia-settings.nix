@@ -12,6 +12,7 @@ let
   settings = {
     bar.default = {
       background_opacity = 0.69999998435378075;
+      capsule = true;
       center = [
         "workspaces"
         "clock"
@@ -37,7 +38,7 @@ let
       radius_top_right = 0;
       start = [ "session" "control-center" "launcher" "sysmon" "battery" "widget" ];
     };
-    config_version = 19;
+    config_version = 20;
     desktop_widgets.enabled = false;
     dock.background_opacity = 0.59999998658895493;
     location.address = "Emigsville, PA";
