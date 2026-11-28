@@ -81,7 +81,8 @@
       ## Math stuff for school ##
       miktex # LaTeX toolchain
       texstudio # LaTeX IDE
-
+      libqalculate
+      
       ## Various KDE apps I have yet to replace ##
       krita # KDE paint
       kdePackages.ark # KDE archive opener
