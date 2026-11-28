@@ -30,7 +30,7 @@
       beam = stable.beam.packages.erlang_27;
       system = "x86_64-linux";
       mkHost = hostPath: nixpkgs.lib.nixosSystem {
-        modules = [ hostPath ];
+        modules = [ hostPath {nixpkgs.overlays = [ self.overlays.default ];} ];
         specialArgs = { inherit self inputs stable beam; };
       };
     in {
@@ -39,5 +39,15 @@
         Nephilim = mkHost ./hosts/nephilim/default.nix;
         AinSoph = mkHost ./hosts/ain_soph/default.nix;
       };
+
+      overlays.default = final: prev: {
+        nyxt = final.callPackage ./pkgs/nyxt/package.nix { };
+      };
+    # lets `nix build .#nyxt` keep working for testing updates
+      packages.x86_64-linux.nyxt =
+        (import nixpkgs {
+          system = "x86_64-linux";
+          overlays = [ self.overlays.default ];
+        }).nyxt;
     };
 }

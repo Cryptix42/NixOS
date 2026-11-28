@@ -1,13 +1,20 @@
 { config, pkgs, inputs, stable, beam, ... }:
 
 {
+
+  imports = [ 
+    ../modules/guilefetch.nix 
+    inputs.umbriel.nixosModules.default
+  ];
+
   environment.sessionVariables = {
     EDITOR = "micro";
   };
+  
   users.users.cryptix = {
     isNormalUser = true;
     description = "Jonathan";
-    extraGroups = [ "guixBuild" "networkmanager" "wheel" ];
+    extraGroups = [ "guixBuild" "networkmanager" "wheel" "libvirtd" "kvm" ];
     shell = pkgs.zsh;
     packages = with pkgs; [ 
 
@@ -100,6 +107,7 @@
       zathuraPkgs.zathuraWrapper # Minimal document viewer with plugins (PDF, PostScript, DjVu, etc)
       discord # Instant messaging
       libreoffice # Office suite
+      nyxt
       # lmstudio # trying out as flatpak first
        
       ## Theming controls for Niri WM ##
@@ -124,7 +132,8 @@
       fileshare # CLI LAN file sharing
       eza # text colored alt to ls
       bat # text colored alt to cat
-      dsearch # CLI fuzzy find filesystem search  
+      dux-search # CLI fuzzy find filesystem search  
+      fetch # +1 larp 
       fzf # TUI fuzzy find filesystem search
       kew # TUI audio player
       mmtui # TUI disk mounter
@@ -137,6 +146,9 @@
 
   services.guix.enable = false;
 
+##  UmbrielWM Config  ##
+
+  programs.umbriel.enable = true;
   home-manager.users.cryptix = { config, ... }: {
     imports = [
       ../modules/niri.nix
@@ -186,9 +198,14 @@
           "Mod+Control+S"   = "window-restore-from-scratchpad";
           "Mod+Alt+S"       = "scratchpad-focus-next";
 
+          "Mod+Tab"         = "cheatsheet-toggle";
+
         };
       };
     };
+
+##  NiriWM Config  ##
+
     myHome.niri = {
       enable = true;
       prefNoCsd = true;
@@ -208,25 +225,11 @@
     home.stateVersion = "25.11";
   };
 
-  imports = [ 
-    ../modules/guilefetch.nix 
-    inputs.umbriel.nixosModules.default
-  ];
-
-  programs.umbriel.enable = true;
-
-  programs.guilefetch = {
-    enable = true;
-    logoFile = ../assets/seraphim-logo.txt;
-    logoAlign = "center";
-    storageMounts = [ "/" ];
-    order = [
-      "title" "rule" "os" "kernel" "packages" "cpu" "gpu" "ram" "storage"
-      "shell" "editor" "terminal" "wm" "gui-shell" "uptime"
-    ];
-    extraEntries.uptime = {
-      label = "Uptime";
-      command = "uptime -p | sed 's/^up //'";
-    };
+##  Virtual Machine  ##
+  virtualisation.libvirtd = {
+    enable = true;	
+    qemu.swtpm.enable = true;
   };
+  programs.virt-manager.enable = true;
+  
 }
