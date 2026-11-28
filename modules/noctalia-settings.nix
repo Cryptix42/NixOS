@@ -37,7 +37,7 @@ let
       radius_top_right = 0;
       start = [ "session" "control-center" "launcher" "sysmon" "battery" "widget" ];
     };
-    config_version = 20;
+    config_version = 19;
     desktop_widgets.enabled = false;
     dock.background_opacity = 0.59999998658895493;
     location.address = "Emigsville, PA";
@@ -54,100 +54,34 @@ let
         visible = true;
       };
       schema_version = 2;
-      widget = {
-        "lockscreen-login-box@DP-3" = {
-          box_height = 196.0;
-          box_width = 810.0;
-          cx = 1280.0;
-          cy = 1258.0;
-          output = "DP-3";
-          placement_height = 1440.0;
-          placement_width = 2560.0;
-          rotation = 0.0;
-          settings = {
-            background_color = "surface_container";
-            background_opacity = 0.88;
-            background_radius = 12.0;
-            center_password_text = false;
-            input_opacity = 1.0;
-            input_radius = 6.0;
-            layout = "regular";
-            show_caps_lock = true;
-            show_keyboard_layout = true;
-            show_login_button = true;
-            show_media = true;
-            show_media_controls = true;
-            show_password_reveal = true;
-            show_session_buttons = true;
-            show_unlock_hint = true;
-            show_weather = true;
-          };
-          type = "login_box";
+      widget."lockscreen-login-box@eDP-1" = {
+        box_height = 196.0;
+        box_width = 720.0;
+        cx = 960.0;
+        cy = 961.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        settings = {
+          background_color = "surface_container";
+          background_opacity = 0.88;
+          background_radius = 12.0;
+          center_password_text = false;
+          input_opacity = 1.0;
+          input_radius = 6.0;
+          layout = "regular";
+          show_caps_lock = true;
+          show_keyboard_layout = true;
+          show_login_button = true;
+          show_media = true;
+          show_session_buttons = true;
+          show_unlock_hint = true;
+          show_weather = true;
         };
-        "lockscreen-login-box@HDMI-A-1" = {
-          box_height = 196.0;
-          box_width = 810.0;
-          cx = 960.0;
-          cy = 898.0;
-          output = "HDMI-A-1";
-          placement_height = 1080.0;
-          placement_width = 1920.0;
-          rotation = 0.0;
-          settings = {
-            background_color = "surface_container";
-            background_opacity = 0.88;
-            background_radius = 12.0;
-            center_password_text = false;
-            input_opacity = 1.0;
-            input_radius = 6.0;
-            layout = "regular";
-            show_caps_lock = true;
-            show_keyboard_layout = true;
-            show_login_button = true;
-            show_media = true;
-            show_media_controls = true;
-            show_password_reveal = true;
-            show_session_buttons = true;
-            show_unlock_hint = true;
-            show_weather = true;
-          };
-          type = "login_box";
-        };
-        "lockscreen-login-box@eDP-1" = {
-          box_height = 196.0;
-          box_width = 720.0;
-          cx = 960.0;
-          cy = 961.0;
-          output = "eDP-1";
-          placement_height = 1080.0;
-          placement_width = 1920.0;
-          rotation = 0.0;
-          settings = {
-            background_color = "surface_container";
-            background_opacity = 0.88;
-            background_radius = 12.0;
-            center_password_text = false;
-            input_opacity = 1.0;
-            input_radius = 6.0;
-            layout = "regular";
-            show_caps_lock = true;
-            show_keyboard_layout = true;
-            show_login_button = true;
-            show_media = true;
-            show_media_controls = true;
-            show_password_reveal = true;
-            show_session_buttons = true;
-            show_unlock_hint = true;
-            show_weather = true;
-          };
-          type = "login_box";
-        };
+        type = "login_box";
       };
-      widget_order = [
-        "lockscreen-login-box@eDP-1"
-        "lockscreen-login-box@DP-3"
-        "lockscreen-login-box@HDMI-A-1"
-      ];
+      widget_order = [ "lockscreen-login-box@eDP-1" ];
     };
     notification.background_opacity = 0.59999998658895493;
     osd.background_opacity = 0.59999998658895493;
@@ -158,10 +92,6 @@ let
       };
       "dmopp/settings-to-nix".target_path = "/home/cryptix/NixOS/modules/noctalia-settings.nix";
       "mindnbytes/nix-status".flake_dir = "/home/cryptix/NixOS";
-      "noctalia/wallhaven" = {
-        api_key = "hvuuvB47FlY1eOYTFC2PaGuuXcwTyHqo";
-        download_dir = "/home/cryptix/Pictures/Wallpapers";
-      };
     };
     plugins.enabled = [
       "noctalia/wallhaven"
@@ -218,14 +148,13 @@ let
       wallpaper_scheme = "m3-rainbow";
     };
     wallpaper = {
-      directory = "/home/cryptix/Pictures/Wallpapers";
+      directory = "~/Pictures/wallpapers";
       fill_color = "on_secondary";
-      fill_mode = "fit";
+      fill_mode = "span";
       transition_on_startup = true;
     };
     widget = {
       bar.type = "naijnus/flatpak-bg:bar";
-      clock.format = "{:%I:%M %p}";
       file-search.type = "nightwatch75/file-search:file-search";
       status.type = "mindnbytes/nix-status:status";
       updates.type = "dmopp/nixos-updates:updates";

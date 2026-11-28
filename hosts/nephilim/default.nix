@@ -8,7 +8,6 @@
     ../../users/cryptix.nix
     ../../home/home-manager.nix
     ../../modules/host-display.nix
-    inputs.sops-nix.nixosModules.sops
   ];
 
   networking.hostName = "Nephilim";

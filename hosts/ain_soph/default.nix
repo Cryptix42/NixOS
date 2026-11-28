@@ -7,8 +7,7 @@
     ../../core/default.nix
     ../../users/kutaren.nix
     inputs.nix-minecraft.nixosModules.minecraft-servers
-    inputs.sops-nix.nixosModules.sops
-  ];
+      ];
   networking.hostName = "AinSoph";
 
   nixpkgs.overlays = [ inputs.nix-minecraft.overlays.default ];
